@@ -1,15 +1,13 @@
-namespace Library.Tests;
+namespace TestDateFormat;
 
 public class Tests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
     [Test]
-    public void Test1()
+    public void TestCorrectDateFormat()
     {
-        Assert.Pass();
+        string testDate = "10/11/1997";
+        string expectedDate = "1997-11-10";
+
+        Assert.That(DateFormatter.ChangeFormat(testDate), Is.EqualTo(expectedDate));
     }
 }
