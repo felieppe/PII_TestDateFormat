@@ -10,4 +10,14 @@ public class Tests
 
         Assert.That(DateFormatter.ChangeFormat(testDate), Is.EqualTo(expectedDate));
     }
+
+    
+    [Test]
+    public void TestIncorrectDateFormat()
+    {
+        string testDate = "10//11/1997";
+        bool validateResult = DateFormatter.ValidateDate(testDate);
+
+        Assert.False(validateResult);
+    }
 }
