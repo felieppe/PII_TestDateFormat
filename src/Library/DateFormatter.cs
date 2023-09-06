@@ -1,4 +1,6 @@
-﻿namespace TestDateFormat;
+﻿using System.Text.RegularExpressions;
+
+namespace TestDateFormat;
 
 /// <summary>
 /// Esta clase implementa la funcionalidad de cambiar el formato de una fecha.
@@ -16,5 +18,14 @@ public class DateFormatter
     public static string ChangeFormat(string date)
     {
         return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+    }
+
+    public static bool ValidateDate(string date) {
+        // Check null or empty date
+        if (string.IsNullOrEmpty(date)) { return false; }
+
+        // Check syntax
+        string pattern = @"^\d{2}/\d{2}/\d{4}$";
+        return Regex.IsMatch(date, pattern);
     }
 }
