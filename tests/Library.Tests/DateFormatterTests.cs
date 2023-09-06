@@ -20,4 +20,13 @@ public class Tests
 
         Assert.False(validateResult);
     }
+
+        [Test]
+    public void TestBlankDateFormat()
+    {
+        string testDate = "";
+        bool validateResult = DateFormatter.ValidateDate(testDate);
+
+        Assert.False(validateResult);
+    }
 }
