@@ -21,7 +21,7 @@ public class Tests
         Assert.False(validateResult);
     }
 
-        [Test]
+    [Test]
     public void TestBlankDateFormat()
     {
         string testDate = "";
